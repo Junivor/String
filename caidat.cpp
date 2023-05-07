@@ -5,7 +5,7 @@ void nhap(char x[]) {
     cin >> x;
 }
 
-void nhapchuoi1(char ten[]) {
+void nhapchuoi(char ten[]) {
     cout << "Nhap chuoi: ";
     cin.get(ten, 20);
 }

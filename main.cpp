@@ -5,7 +5,7 @@ int main()
     char chuoi[50], chuoi1[50], x[10];
     int dem1 = 0;
 
-    nhapchuoi1(chuoi);
+    nhapchuoi(chuoi);
     cin.ignore();
     nhapdoan(chuoi1);
     cin.ignore();

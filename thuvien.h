@@ -5,7 +5,7 @@
 using namespace std;
 
 void nhap(char[]);
-void nhapchuoi1(char[]);
+void nhapchuoi(char[]);
 void nhapdoan(char[]);
 void xuatchuoi(char[]);
 void dem(char[], char[], int&);
