@@ -1,19 +1,19 @@
 #pragma once
 #include <iostream>
 #include <cstring>
-
+#include <cctype>
 using namespace std;
 
-void nhap(char[]);
 void nhapchuoi(char[]);
-void nhapdoan(char[]);
 void xuatchuoi(char[]);
-void dem(char[], char[], int&);
-void xuatdem(int);
-void inhoa(char[]);
-void daochuoi(char[]);
-void saochep(char[], char[]);
-void xuatchuoi1(char[]);
+void nhapdoan(char[]);
+void xuatdoan(char[]);
+void dem_ky_tu_x(char[], char, int&);
+void dao_chuoi(char[]);
+void chuyen_chu_hoa(char[]);
+void chuyen_chu_thuong(char[]);
+void sao_chep_chuoi(char[], char[]);
+void sao_chep_tu(char[], char[]);
 
 #ifndef STRING_THUVIEN_H
 #define STRING_THUVIEN_H

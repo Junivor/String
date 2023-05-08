@@ -1,18 +1,8 @@
 #include "thuvien.h"
 
-void nhap(char x[]) {
-    cout << "Nhap : ";
-    cin >> x;
-}
-
 void nhapchuoi(char ten[]) {
     cout << "Nhap chuoi: ";
     cin.get(ten, 20);
-}
-
-void nhapdoan(char ten[]) {
-    cout << "Nhap doan: ";
-    cin.get(ten, 20,'$');
 }
 
 void xuatchuoi(char ten[]) {
@@ -21,48 +11,73 @@ void xuatchuoi(char ten[]) {
         cout << ten[i];
     }
 }
-void xuatchuoi1(char ten1[]) {
-    cout << "\tChuoi da sao chep la: ";
-    for (int i = 0; i < strlen(ten1); i++) {
-        cout << ten1[i];
+
+void nhapdoan(char ten[]) {
+    cout << "Nhap doan: ";
+    cin.get(ten, 20,'$');
+}
+
+void xuatdoan(char ten[]) {
+    cout << "Chuoi doan da nhap la: ";
+    for (int i = 0; i < strlen(ten); i++) {
+        cout << ten[i];
     }
 }
 
-void dem(char ten[], char x[],int& dem1) {
-    for (int i = 0; i < strlen(ten); i++) {
-        if (ten[i] == x[0]) {
-            dem1++;
+void dem_ky_tu_x(char chuoi[], char x, int &dem) {
+    dem = 0;
+
+    cout << "Nhap ky tu x (ky tu can tim): ";
+    cin >> x;
+    for (int i = 0; i < strlen(chuoi); i++) {
+        if (chuoi[i] == x) {
+            dem++;
         }
     }
+    cout << "So ky tu " << x << " co trong chuoi la: " << dem << endl;
 }
 
-void xuatdem(int dem) {
-    cout << "Co " << dem << " ki tu giong voi ki tu da nhap";
-}
-
-void inhoa(char ten[]) {
-    for (int i = 0; i < strlen(ten); i++) {
-        ten[i] = toupper(ten[i]);
+void dao_chuoi(char chuoi[]) {
+    int n = strlen(chuoi);
+    for (int i = 0; i < n / 2; i++) {
+        char temp = chuoi[i];
+        chuoi[i] = chuoi[n - i - 1];
+        chuoi[n - i - 1] = temp;
     }
+    cout << "Chuoi sau khi dao la: " << chuoi << endl;
 }
 
-void daochuoi(char ten[]) {
-    int min = 0, max = strlen(ten) - 1;
-    while (min < max) {
-        char sotg = ten[min];
-        ten[min] = ten[max];
-        ten[max] = sotg;
-        min++;
-        max--;
+void chuyen_chu_hoa(char chuoi[]) {
+    for (int i = 0; i < strlen(chuoi); i++) {
+        chuoi[i] = toupper(chuoi[i]);
     }
+    cout << "Chuoi sau khi chuyen sang chu hoa la: " << chuoi << endl;
 }
 
-void saochep(char ten[], char ten1[]) {
-    int vitri, sokytu, j = 0;
-    cout << "Nhap vi tri: "; cin >> vitri;
-    cout << "Nhap so ky tu muon sao chep : "; cin >> sokytu;
-    for (int i = vitri; i < (vitri + sokytu); i++) {
-        ten1[j++] = ten[i];
+void chuyen_chu_thuong(char chuoi[]) {
+    for (int i = 0; i < strlen(chuoi); i++) {
+        chuoi[i] = tolower(chuoi[i]);
     }
-    ten1[sokytu] = '\0';
+    cout << "Chuoi sau khi chuyen sang chu thuong la: " << chuoi << endl;
+}
+
+void sao_chep_chuoi(char src[], char dest[]) {
+    strcpy(dest, src);
+    cout << "Chuoi sau khi sao chep la: " << dest << endl;
+}
+
+void sao_chep_tu(char chuoi[], char tu[]) {
+    int index;
+    cout << "Nhap vi tri bat dau sao chep tu: ";
+    cin >> index;
+
+    int i = index, j = 0;
+
+    while (i < strlen(chuoi) && chuoi[i] != ' ') {
+        tu[j] = chuoi[i];
+        i++;
+        j++;
+    }
+    tu[j] = '\0';
+    cout << "Tu sau khi sao chep la: " << endl;
 }
